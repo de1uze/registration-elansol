@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './login.css';
+import avatar from '../assets/avatar.png'
+
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -23,18 +25,25 @@ const Login = () => {
     return (
     <div className="login-container">
       <form onSubmit={handleSubmit}>
-        <h1>SIGN IN</h1>
+        <h1 >SIGN IN</h1>
         <br />
-        <input type='email' onChange={(e)=>setEmail(e.target.value)} value={email} placeholder='Enter Your Email'></input>
+       
+        <img src={avatar} className='avatar'/><br />
+       
+        <input className='inputStyle' type='email' onChange={(e)=>setEmail(e.target.value)} value={email} placeholder=' | Enter Your Email'></input>
         <br />
-        <input type='password' onChange={(e)=>setPassword(e.target.value)} value={password} placeholder='Enter Your Password'></input>
+        <input className='inputStyle' type='password' onChange={(e)=>setPassword(e.target.value)} value={password} placeholder=' |Enter Your Password'></input>
+
           <div className="remember-me-container">
             <div className="remember-me-container-label">
                 <input type="checkbox" id="remember-me" />
                 <label htmlFor="remember-me">Remember Me</label>
+              
             </div>
-            <div>
-            <p><Link to={'/register'}>Signup</Link></p>
+            <div className='forgotContainer'>
+            <p>
+              <Link to={'/register'}>Register</Link>
+              </p>
             </div>
         </div>
 

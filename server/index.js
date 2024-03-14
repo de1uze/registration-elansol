@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 const User = require('./User')
 
 const SECRET_KEY = 'super-secret-key'
-const MONGO_URL = 'mongodb://localhost:27017'
+const MONGO_URL = 'localhost:5175'
 
 const app = express();
 const port = 2000;
